@@ -1,0 +1,48 @@
+---
+import { getImage } from "astro:assets";
+import image1 from "../assets/images/hero.jpg";
+const optimizedBackground = await getImage({ src: image1, format: "webp" });
+---
+
+<section class="relative overflow-hidden bg-black">
+	<div
+		class="absolute left-0 top-0 h-auto w-screen bg-cover bg-center bg-no-repeat md:h-[700px] lg:h-[800px]"
+		style={`background-image: url(${optimizedBackground.src});`}
+	>
+	</div>
+	<div
+		class="absolute left-0 top-0 h-auto w-screen bg-black/90 md:h-[700px] lg:h-[800px]"
+	>
+	</div>
+	<div class="relative mx-auto max-w-7xl pb-20 pt-32">
+		<div class="relative m-auto px-6 md:px-12 lg:px-6 xl:container">
+			<h1
+				class="text-center font-heading text-[1.8rem] text-white font-black sm:mx-auto sm:w-10/12 sm:text-[2.7rem] md:w-2/3 md:text-[3.24rem] lg:w-auto lg:text-center xl:text-[3.78rem]"
+			>
+				Cutting-Edge Electronics. <br class="hidden lg:block" />
+				<span class="relative text-purple-300"
+					>Strategic Technology Solutions</span
+				>
+			</h1>
+			<div class="flex flex-col items-center">
+				<div
+					class="relative mt-8 space-y-8 text-center sm:mx-auto md:mt-16 max-w-3xl"
+				>
+					<p class="text-gray-200 md:text-lg">
+						In the fast-evolving world of technology distribution, <span
+							class="font-semibold">Cravensea Ltd.,</span
+						> establishes itself as a unified platform offering cutting-edge
+						electronics and technology solutions with unbeatable pricing.
+						We serve both enterprise clients and personal technology
+						shoppers across the United Kingdom and internationally.
+					</p>
+					<span class="block font-semibold text-white md:text-lg"
+						>Our mission is to deliver strategic cost optimization
+						through strong manufacturer partnerships and supply
+						chain excellence.</span
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
